@@ -10,7 +10,7 @@ The evident challenge of studies on this topic is how to deal with different lan
 
 ## Methods & Experiment
 
-![experiement](./resource/image/experiment.png)
+<img src = "./resource/image/experiment.png" height = "70%" width = "70%">
 
 > Hyperparameter Tuning (XLM-R)
 
