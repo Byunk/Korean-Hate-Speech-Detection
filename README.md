@@ -18,7 +18,7 @@
 
 You first need to install PyTorch.
 
-> All Experiments are conducted with Python 3.9.15
+> All Experiments are conducted by Python 3.9.15
 
 ```
 chmod 744 ./setup.sh
