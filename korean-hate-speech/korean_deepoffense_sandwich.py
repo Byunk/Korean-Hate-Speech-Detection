@@ -81,15 +81,18 @@ test_preds = np.zeros((len(test), args["n_fold"]))
 
 
 # ENGLISH PRETRAIN
-if not os.path.exists("temp/pretrain"):
+if not os.path.exists("temp/sandwich_pretrain"):
     print("PRETRAIN")
     args['output_dir'] = "temp/pretrain"
     model = ClassificationModel(MODEL_TYPE, MODEL_NAME, num_labels=3, args=args,use_cuda=torch.cuda.is_available()) 
+    train_df, eval_df = train_test_split(train, test_size=0.1, random_state=SEED * 42)
+    model.train_model(train_df, eval_df=eval_df, macro_f1=macro_f1, weighted_f1=weighted_f1, accuracy=sklearn.metrics.accuracy_score)
+    MODEL_NAME = "temp/sandwich_pretrain"
+    model = ClassificationModel(MODEL_TYPE, MODEL_NAME, num_labels=3, args=args,use_cuda=torch.cuda.is_available()) 
     train_df, eval_df = train_test_split(train2, test_size=0.1, random_state=SEED * 42)
     model.train_model(train_df, eval_df=eval_df, macro_f1=macro_f1, weighted_f1=weighted_f1, accuracy=sklearn.metrics.accuracy_score)
-    MODEL_NAME = "temp/pretrain"
 else:
-    MODEL_NAME = "temp/pretrain"
+    MODEL_NAME = "temp/sandwich_pretrain"
 
 
 
@@ -100,8 +103,8 @@ if args["evaluate_during_training"]:
         if os.path.exists(args['output_dir']) and os.path.isdir(args['output_dir']):
             shutil.rmtree(args['output_dir'])
         print("Started Fold {}".format(i))
-        model = ClassificationModel(MODEL_TYPE, "xlmroberta2", num_labels=3, args=args,
-                                    use_cuda=torch.cuda.is_available())  # You can set class weights by using the optional weight argument
+        model = ClassificationModel(MODEL_TYPE, MODEL_NAME, num_labels=3, args=args,
+                                    use_cuda=torch.cuda.is_available()) 
         train_df, eval_df = train_test_split(train, test_size=0.1, random_state=21 * i)
         model.train_model(train_df, eval_df=eval_df, macro_f1=macro_f1, weighted_f1=weighted_f1, accuracy=sklearn.metrics.accuracy_score)
         model = ClassificationModel(MODEL_TYPE, args["best_model_dir"], num_labels=3, args=args,

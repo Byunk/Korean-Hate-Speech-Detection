@@ -39,7 +39,7 @@ args = {
     'warmup_steps': 0,
     'max_grad_norm': 1.0,
     'do_lower_case': False,
-    'n_fold': 4,
+    'n_fold': 3,
 
     # 'logging_steps': 60,
     'logging_steps': 400,
