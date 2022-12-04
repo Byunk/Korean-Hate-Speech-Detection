@@ -1,0 +1,102 @@
+Some weights of the model checkpoint at xlm-roberta-large were not used when initializing XLMRobertaForSequenceClassification: ['lm_head.dense.weight', 'lm_head.bias', 'lm_head.decoder.weight', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.layer_norm.weight']
+- This IS expected if you are initializing XLMRobertaForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing XLMRobertaForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of XLMRobertaForSequenceClassification were not initialized from the model checkpoint at xlm-roberta-large and are newly initialized: ['classifier.out_proj.weight', 'classifier.dense.weight', 'classifier.dense.bias', 'classifier.out_proj.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/root/team26/DeepOffense/deepoffense/classification/classification_model.py:315: UserWarning: use_multiprocessing automatically disabled as xlmroberta fails when using multiprocessing for feature conversion.
+  warnings.warn(
+Started Training
+ENGLISH PRETRAIN
+  0%|          | 0/22304 [00:00<?, ?it/s]  2%|▏         | 536/22304 [00:00<00:04, 5358.65it/s]  5%|▌         | 1217/22304 [00:00<00:03, 6208.39it/s]  9%|▊         | 1927/22304 [00:00<00:03, 6614.47it/s] 12%|█▏        | 2615/22304 [00:00<00:02, 6715.64it/s] 15%|█▍        | 3315/22304 [00:00<00:02, 6815.58it/s] 18%|█▊        | 4047/22304 [00:00<00:02, 6983.24it/s] 21%|██▏       | 4747/22304 [00:00<00:02, 6986.18it/s] 25%|██▍       | 5486/22304 [00:00<00:02, 7114.04it/s] 28%|██▊       | 6198/22304 [00:01<00:03, 5287.04it/s] 31%|███       | 6915/22304 [00:01<00:02, 5754.87it/s] 34%|███▍      | 7616/22304 [00:01<00:02, 6083.21it/s] 37%|███▋      | 8326/22304 [00:01<00:02, 6357.38it/s] 40%|████      | 8997/22304 [00:01<00:02, 6436.06it/s] 44%|████▎     | 9716/22304 [00:01<00:01, 6650.17it/s] 47%|████▋     | 10417/22304 [00:01<00:01, 6752.78it/s] 50%|████▉     | 11121/22304 [00:01<00:01, 6833.01it/s] 53%|█████▎    | 11814/22304 [00:01<00:01, 6843.43it/s] 56%|█████▌    | 12505/22304 [00:01<00:01, 6836.19it/s] 59%|█████▉    | 13194/22304 [00:02<00:01, 6411.47it/s] 62%|██████▏   | 13849/22304 [00:02<00:01, 6423.42it/s] 65%|██████▌   | 14528/22304 [00:02<00:01, 6524.39it/s] 68%|██████▊   | 15185/22304 [00:02<00:01, 5599.80it/s] 71%|███████   | 15770/22304 [00:02<00:01, 4578.16it/s]Some weights of the model checkpoint at xlm-roberta-large were not used when initializing XLMRobertaForSequenceClassification: ['lm_head.bias', 'lm_head.layer_norm.weight', 'lm_head.dense.weight', 'lm_head.decoder.weight', 'lm_head.layer_norm.bias', 'lm_head.dense.bias']
+- This IS expected if you are initializing XLMRobertaForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing XLMRobertaForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of XLMRobertaForSequenceClassification were not initialized from the model checkpoint at xlm-roberta-large and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.weight', 'classifier.out_proj.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+ 73%|███████▎  | 16272/22304 [00:02<00:01, 4302.27it/s] 75%|███████▌  | 16733/22304 [00:02<00:01, 4352.09it/s] 78%|███████▊  | 17298/22304 [00:02<00:01, 4675.76it/s] 80%|████████  | 17889/22304 [00:03<00:00, 4998.37it/s] 83%|████████▎ | 18583/22304 [00:03<00:00, 5527.68it/s] 86%|████████▋ | 19240/22304 [00:03<00:00, 5819.62it/s] 89%|████████▉ | 19909/22304 [00:03<00:00, 6066.52it/s] 92%|█████████▏| 20562/22304 [00:03<00:00, 6197.86it/s] 95%|█████████▌| 21253/22304 [00:03<00:00, 6404.33it/s] 98%|█████████▊| 21945/22304 [00:03<00:00, 6553.71it/s]100%|██████████| 22304/22304 [00:03<00:00, 6055.30it/s]
+/root/team26/DeepOffense/deepoffense/classification/classification_model.py:315: UserWarning: use_multiprocessing automatically disabled as xlmroberta fails when using multiprocessing for feature conversion.
+  warnings.warn(
+Started Training
+ENGLISH PRETRAIN
+  0%|          | 0/22304 [00:00<?, ?it/s]  2%|▏         | 504/22304 [00:00<00:04, 5037.72it/s]  5%|▌         | 1177/22304 [00:00<00:03, 6027.02it/s]  8%|▊         | 1840/22304 [00:00<00:03, 6301.34it/s] 11%|█         | 2498/22304 [00:00<00:03, 6406.64it/s] 14%|█▍        | 3208/22304 [00:00<00:02, 6653.26it/s] 18%|█▊        | 3953/22304 [00:00<00:02, 6921.73it/s] 21%|██        | 4652/22304 [00:00<00:02, 6938.92it/s] 24%|██▍       | 5364/22304 [00:00<00:02, 6995.26it/s] 27%|██▋       | 6064/22304 [00:01<00:03, 5257.42it/s]/root/anaconda3/envs/deep/lib/python3.10/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+Epoch:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 1 of 3:   0%|          | 0/3 [00:00<?, ?it/s]
+Running Epoch 0 of 3:   0%|          | 0/2479 [00:00<?, ?it/s][A 30%|██▉       | 6652/22304 [00:01<00:03, 5041.21it/s] 32%|███▏      | 7199/22304 [00:01<00:03, 4427.18it/s] 34%|███▍      | 7680/22304 [00:01<00:03, 3902.42it/s] 36%|███▋      | 8102/22304 [00:01<00:03, 3712.99it/s] 38%|███▊      | 8494/22304 [00:01<00:03, 3576.02it/s] 40%|███▉      | 8865/22304 [00:01<00:03, 3428.25it/s] 41%|████▏     | 9216/22304 [00:01<00:03, 3343.81it/s] 43%|████▎     | 9569/22304 [00:02<00:03, 3388.12it/s] 45%|████▍     | 10014/22304 [00:02<00:03, 3669.42it/s] 47%|████▋     | 10388/22304 [00:02<00:03, 3523.87it/s] 49%|████▊     | 10855/22304 [00:02<00:02, 3817.24it/s] 51%|█████     | 11382/22304 [00:02<00:02, 4222.70it/s] 53%|█████▎    | 11812/22304 [00:02<00:02, 4191.55it/s] 55%|█████▍    | 12248/22304 [00:02<00:02, 4207.74it/s] 57%|█████▋    | 12673/22304 [00:02<00:02, 4217.02it/s] 59%|█████▉    | 13138/22304 [00:02<00:02, 4343.04it/s] 61%|██████    | 13589/22304 [00:02<00:02, 4336.39it/s] 63%|██████▎   | 14048/22304 [00:03<00:01, 4410.06it/s] 65%|██████▍   | 14491/22304 [00:03<00:01, 4386.92it/s] 67%|██████▋   | 14961/22304 [00:03<00:01, 4478.28it/s] 70%|██████▉   | 15503/22304 [00:03<00:01, 4757.33it/s] 72%|███████▏  | 16040/22304 [00:03<00:01, 4938.11it/s] 74%|███████▍  | 16564/22304 [00:03<00:01, 5027.69it/s] 77%|███████▋  | 17068/22304 [00:03<00:01, 4845.72it/s] 79%|███████▊  | 17555/22304 [00:03<00:01, 4729.78it/s] 81%|████████  | 18112/22304 [00:03<00:00, 4970.21it/s] 84%|████████▎ | 18625/22304 [00:04<00:00, 5016.13it/s] 86%|████████▌ | 19129/22304 [00:04<00:00, 4993.54it/s]
+Epochs 0/3. Running Loss:    1.2159:   0%|          | 0/2479 [00:03<?, ?it/s][A 88%|████████▊ | 19667/22304 [00:04<00:00, 5105.88it/s] 91%|█████████ | 20236/22304 [00:04<00:00, 5272.35it/s] 93%|█████████▎| 20798/22304 [00:04<00:00, 5374.72it/s] 96%|█████████▌| 21344/22304 [00:04<00:00, 5396.86it/s] 98%|█████████▊| 21885/22304 [00:04<00:00, 5396.98it/s]100%|██████████| 22304/22304 [00:04<00:00, 4753.90it/s]
+/root/anaconda3/envs/deep/lib/python3.10/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+Epoch:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 1 of 3:   0%|          | 0/3 [00:00<?, ?it/s]
+Running Epoch 0 of 3:   0%|          | 0/2479 [00:00<?, ?it/s][A
+Epochs 0/3. Running Loss:    1.2159:   0%|          | 1/2479 [00:15<10:46:54, 15.66s/it][A
+Epochs 0/3. Running Loss:    1.2159:   0%|          | 0/2479 [00:13<?, ?it/s][A
+Epochs 0/3. Running Loss:    1.4258:   0%|          | 1/2479 [00:28<10:46:54, 15.66s/it][A
+Epochs 0/3. Running Loss:    1.2159:   0%|          | 1/2479 [00:31<21:48:22, 31.68s/it][A
+Epochs 0/3. Running Loss:    1.4258:   0%|          | 2/2479 [00:42<15:27:17, 22.46s/it][A
+Epochs 0/3. Running Loss:    1.2355:   0%|          | 2/2479 [00:46<15:27:17, 22.46s/it][A
+Epochs 0/3. Running Loss:    1.4258:   0%|          | 1/2479 [00:36<21:48:22, 31.68s/it][A
+Epochs 0/3. Running Loss:    1.2355:   0%|          | 3/2479 [00:57<13:02:35, 18.96s/it][A
+Epochs 0/3. Running Loss:    1.4258:   0%|          | 2/2479 [00:48<15:55:12, 23.14s/it][A
+Epochs 0/3. Running Loss:    1.2471:   0%|          | 3/2479 [01:01<13:02:35, 18.96s/it][A
+Epochs 0/3. Running Loss:    1.2355:   0%|          | 2/2479 [00:52<15:55:12, 23.14s/it][A
+Epochs 0/3. Running Loss:    1.2355:   0%|          | 3/2479 [01:03<13:11:29, 19.18s/it][A
+Epochs 0/3. Running Loss:    1.2471:   0%|          | 4/2479 [01:14<12:20:20, 17.95s/it][A
+Epochs 0/3. Running Loss:    1.2471:   0%|          | 3/2479 [01:07<13:11:29, 19.18s/it][A
+Epochs 0/3. Running Loss:    1.2585:   0%|          | 4/2479 [01:17<12:20:20, 17.95s/it][A
+Epochs 0/3. Running Loss:    1.2585:   0%|          | 5/2479 [01:25<10:47:45, 15.71s/it][A
+Epochs 0/3. Running Loss:    1.2471:   0%|          | 4/2479 [01:15<11:21:35, 16.52s/it][A
+Epochs 0/3. Running Loss:    1.2765:   0%|          | 5/2479 [01:28<10:47:45, 15.71s/it][A
+Epochs 0/3. Running Loss:    1.2585:   0%|          | 4/2479 [01:18<11:21:35, 16.52s/it][A
+Epochs 0/3. Running Loss:    1.2765:   0%|          | 6/2479 [01:34<9:10:37, 13.36s/it] [A
+Epochs 0/3. Running Loss:    1.2585:   0%|          | 5/2479 [01:25<9:45:03, 14.19s/it] [A
+Epochs 0/3. Running Loss:    1.4410:   0%|          | 6/2479 [01:37<9:10:37, 13.36s/it][A
+Epochs 0/3. Running Loss:    1.2765:   0%|          | 5/2479 [01:29<9:45:03, 14.19s/it][A
+Epochs 0/3. Running Loss:    1.4410:   0%|          | 7/2479 [01:45<8:33:27, 12.46s/it][A
+Epochs 0/3. Running Loss:    1.3211:   0%|          | 7/2479 [01:48<8:33:27, 12.46s/it][A
+Epochs 0/3. Running Loss:    1.2765:   0%|          | 6/2479 [01:38<9:23:20, 13.67s/it][A
+Epochs 0/3. Running Loss:    1.4410:   0%|          | 6/2479 [01:41<9:23:20, 13.67s/it][A
+Epochs 0/3. Running Loss:    1.3211:   0%|          | 8/2479 [01:58<8:50:14, 12.88s/it][A
+Epochs 0/3. Running Loss:    1.4410:   0%|          | 7/2479 [01:51<9:10:17, 13.36s/it][A
+Epochs 0/3. Running Loss:    1.3211:   0%|          | 7/2479 [01:52<9:10:17, 13.36s/it][ASome weights of the model checkpoint at xlm-roberta-large were not used when initializing XLMRobertaForSequenceClassification: ['lm_head.layer_norm.weight', 'lm_head.dense.bias', 'lm_head.bias', 'lm_head.dense.weight', 'lm_head.decoder.weight', 'lm_head.layer_norm.bias']
+- This IS expected if you are initializing XLMRobertaForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing XLMRobertaForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of XLMRobertaForSequenceClassification were not initialized from the model checkpoint at xlm-roberta-large and are newly initialized: ['classifier.out_proj.weight', 'classifier.dense.bias', 'classifier.out_proj.bias', 'classifier.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/root/team26/DeepOffense/deepoffense/classification/classification_model.py:317: UserWarning: use_multiprocessing automatically disabled as xlmroberta fails when using multiprocessing for feature conversion.
+  warnings.warn(
+Started Training
+ENGLISH PRETRAIN
+  0%|          | 0/22304 [00:00<?, ?it/s]  0%|          | 30/22304 [00:00<01:39, 223.21it/s]  3%|▎         | 583/22304 [00:00<00:07, 2954.29it/s]  6%|▌         | 1265/22304 [00:00<00:04, 4589.04it/s]  9%|▊         | 1947/22304 [00:00<00:03, 5426.69it/s] 12%|█▏        | 2632/22304 [00:00<00:03, 5922.01it/s] 15%|█▌        | 3353/22304 [00:00<00:02, 6349.35it/s] 18%|█▊        | 4099/22304 [00:00<00:02, 6704.95it/s] 21%|██▏       | 4793/22304 [00:00<00:02, 6770.87it/s] 25%|██▍       | 5476/22304 [00:00<00:02, 6468.12it/s] 28%|██▊       | 6223/22304 [00:01<00:02, 6764.36it/s] 31%|███       | 6945/22304 [00:01<00:02, 6899.61it/s] 34%|███▍      | 7683/22304 [00:01<00:02, 7041.00it/s] 38%|███▊      | 8402/22304 [00:01<00:01, 7083.77it/s] 41%|████      | 9128/22304 [00:01<00:01, 7134.48it/s] 44%|████▍     | 9844/22304 [00:01<00:01, 7059.66it/s] 47%|████▋     | 10552/22304 [00:01<00:01, 6978.21it/s] 51%|█████     | 11274/22304 [00:01<00:01, 7049.00it/s] 54%|█████▎    | 11980/22304 [00:01<00:01, 6991.17it/s] 57%|█████▋    | 12695/22304 [00:01<00:01, 7035.82it/s] 60%|██████    | 13400/22304 [00:02<00:01, 6966.26it/s] 63%|██████▎   | 14130/22304 [00:02<00:01, 7062.43it/s] 67%|██████▋   | 14837/22304 [00:02<00:01, 6960.68it/s] 70%|██████▉   | 15560/22304 [00:02<00:00, 7036.97it/s] 73%|███████▎  | 16298/22304 [00:02<00:00, 7134.78it/s] 76%|███████▋  | 17013/22304 [00:02<00:00, 7136.60it/s] 80%|███████▉  | 17739/22304 [00:02<00:00, 7172.43it/s] 83%|████████▎ | 18457/22304 [00:02<00:00, 4820.94it/s] 86%|████████▌ | 19134/22304 [00:03<00:00, 5254.44it/s] 89%|████████▉ | 19849/22304 [00:03<00:00, 5710.65it/s] 92%|█████████▏| 20514/22304 [00:03<00:00, 5947.85it/s] 95%|█████████▌| 21227/22304 [00:03<00:00, 6260.76it/s] 98%|█████████▊| 21948/22304 [00:03<00:00, 6523.02it/s]100%|██████████| 22304/22304 [00:03<00:00, 6401.61it/s]
+/root/anaconda3/envs/deep/lib/python3.10/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+Epoch:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 1 of 3:   0%|          | 0/3 [00:00<?, ?it/s]
+Running Epoch 0 of 3:   0%|          | 0/2479 [00:00<?, ?it/s][A
+Epochs 0/3. Running Loss:    1.2159:   0%|          | 0/2479 [00:02<?, ?it/s][A
+Epochs 0/3. Running Loss:    1.2159:   0%|          | 1/2479 [00:08<6:04:14,  8.82s/it][A
+Epochs 0/3. Running Loss:    1.4258:   0%|          | 1/2479 [00:10<6:04:14,  8.82s/it][A
+Epochs 0/3. Running Loss:    1.4258:   0%|          | 2/2479 [00:19<7:00:49, 10.19s/it][A
+Epochs 0/3. Running Loss:    1.2355:   0%|          | 2/2479 [00:22<7:00:49, 10.19s/it][A
+Epochs 0/3. Running Loss:    1.2355:   0%|          | 3/2479 [00:26<5:49:56,  8.48s/it][A
+Epochs 0/3. Running Loss:    1.2471:   0%|          | 3/2479 [00:27<5:49:56,  8.48s/it][A
+Epochs 0/3. Running Loss:    1.2471:   0%|          | 4/2479 [00:30<4:39:23,  6.77s/it][A
+Epochs 0/3. Running Loss:    1.2585:   0%|          | 4/2479 [00:31<4:39:23,  6.77s/it][A
+Epochs 0/3. Running Loss:    1.2585:   0%|          | 5/2479 [00:35<4:07:51,  6.01s/it][A
+Epochs 0/3. Running Loss:    1.2765:   0%|          | 5/2479 [00:36<4:07:51,  6.01s/it][A
+Epochs 0/3. Running Loss:    1.2765:   0%|          | 6/2479 [01:02<9:09:37, 13.34s/it][A
+Epochs 0/3. Running Loss:    1.4410:   0%|          | 6/2479 [01:20<9:09:37, 13.34s/it][A
+Epochs 0/3. Running Loss:    1.4410:   0%|          | 7/2479 [02:07<20:36:03, 30.00s/it][A
+Epochs 0/3. Running Loss:    1.3211:   0%|          | 7/2479 [02:24<20:36:03, 30.00s/it][A
+Epochs 0/3. Running Loss:    1.3211:   0%|          | 8/2479 [03:05<26:53:15, 39.17s/it][A
+Epochs 0/3. Running Loss:    1.3132:   0%|          | 8/2479 [03:23<26:53:15, 39.17s/it][A
+Epochs 0/3. Running Loss:    1.3132:   0%|          | 9/2479 [04:03<30:43:45, 44.79s/it][A
+Epochs 0/3. Running Loss:    1.4127:   0%|          | 9/2479 [04:24<30:43:45, 44.79s/it][A
+Epochs 0/3. Running Loss:    1.4127:   0%|          | 10/2479 [05:10<35:34:31, 51.87s/it][A
+Epochs 0/3. Running Loss:    1.3066:   0%|          | 10/2479 [05:28<35:34:31, 51.87s/it][A
+Epochs 0/3. Running Loss:    1.3066:   0%|          | 11/2479 [06:03<35:45:22, 52.16s/it][A
+Epochs 0/3. Running Loss:    1.2669:   0%|          | 11/2479 [06:20<35:45:22, 52.16s/it][A
+Epochs 0/3. Running Loss:    1.2669:   0%|          | 12/2479 [07:05<37:45:42, 55.10s/it][A
+Epochs 0/3. Running Loss:    1.2075:   0%|          | 12/2479 [07:22<37:45:42, 55.10s/it][A
+Epochs 0/3. Running Loss:    1.2075:   1%|          | 13/2479 [07:55<36:41:53, 53.57s/it][A
+Epochs 0/3. Running Loss:    1.3096:   1%|          | 13/2479 [08:10<36:41:53, 53.57s/it][A
+Epochs 0/3. Running Loss:    1.3096:   1%|          | 14/2479 [08:49<36:51:52, 53.84s/it][A
+Epochs 0/3. Running Loss:    1.3582:   1%|          | 14/2479 [09:05<36:51:52, 53.84s/it][A
+Epochs 0/3. Running Loss:    1.3582:   1%|          | 15/2479 [09:34<34:59:01, 51.11s/it][A
+Epochs 0/3. Running Loss:    1.2254:   1%|          | 15/2479 [09:50<34:59:01, 51.11s/it][A
