@@ -4,6 +4,7 @@
 
 - [Korean Hate Speech Detection](#korean-hate-speech-detection)
   - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
   - [Motivation](#motivation)
   - [Relative Works](#relative-works)
   - [Methods \& Experiment](#methods--experiment)
@@ -13,6 +14,24 @@
   - [Conclusion](#conclusion)
   - [Future Works](#future-works)
   - [References](#references)
+
+## Installation
+
+You first need to install PyTorch.
+
+> All Experiments are conducted with Python 3.9.15
+
+```
+chmod 744 ./setup.sh
+./setup.sh
+```
+
+Alternatively, you can manually cloning the DeepOffense repository.
+
+```
+# Optional
+git clone https://github.com/TharinduDR/DeepOffense.git
+```
 
 ## Motivation
 
