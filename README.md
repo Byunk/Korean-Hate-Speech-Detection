@@ -24,8 +24,6 @@ The evident challenge of studies on this topic is how to deal with different lan
 
 ## Result
 
-#
-
 ### **Overview**
 
 |        Model         |            Evaluation Result             |
