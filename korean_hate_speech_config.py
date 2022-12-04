@@ -1,6 +1,9 @@
 from multiprocessing import cpu_count
 
 PATH_RESULT = "./result"
+PATH_DATA = './resource/data/korean'
+PATH_PRETRAIN = './resoruce/data/pretrain'
+
 TRAIN_FILE = "train.tsv"
 TEST_FILE = "test.tsv"
 DEV_RESULT_FILE = "dev_result.tsv"
@@ -9,19 +12,14 @@ RESULT_FILE = "result.csv"
 SUBMISSION_FOLDER = "transformers"
 SUBMISSION_FILE = "transformers"
 MODEL_TYPE = "xlmroberta"
-MODEL_NAME = "xlm-roberta-large"
+# MODEL_NAME = "xlm-roberta-large"
 
 LANGUAGE_FINETUNE = False
 SEED = 777
 
-GOOGLE_DRIVE = False
-DRIVE_FILE_ID = "1_P3dCLcN3XoJT8BRgFhrwdVMODgyejwI"
-
-# training instances = 7000 > if batch size=8, batches = 875 > evaluate during training steps -> 80 or 175
-
 args = {
-    'output_dir': 'temp/outputs/',
-    "best_model_dir": "temp/outputs/best_model",
+    'output_dir': PATH_RESULT,
+    "best_model_dir": PATH_RESULT + "/best_model",
     'cache_dir': 'temp/cache_dir/',
 
     'fp16': False,
@@ -38,7 +36,7 @@ args = {
     'warmup_steps': 0,
     'max_grad_norm': 1.0,
     'do_lower_case': False,
-    'n_fold': 3,
+    'n_fold': 4,
 
     # 'logging_steps': 60,
     'logging_steps': 400,

@@ -4,32 +4,37 @@
 import os
 import shutil
 import time
-import csv
 import numpy as np
 import pandas as pd
 import torch
 import sklearn
 from sklearn.model_selection import train_test_split
-import sys        
+import sys
 
-# sys.path.append('./DeepOffense')
+sys.path.append('./DeepOffense')
 from deepoffense.classification import ClassificationModel
 from deepoffense.language_modeling.language_modeling_model import LanguageModelingModel
-from examples.common.download import download_from_google_drive
-from korean_hate_speech_config import LANGUAGE_FINETUNE, PATH_RESULT, SUBMISSION_FOLDER, \
-    MODEL_NAME, language_modeling_args, args, SEED, RESULT_FILE, GOOGLE_DRIVE, DRIVE_FILE_ID
-from common.evaluation import macro_f1, weighted_f1
-from common.label_converter import decode, encode
-from common.print_stat import print_information
+from korean_hate_speech_config import (
+    LANGUAGE_FINETUNE, 
+    PATH_RESULT,
+    PATH_DATA,
+    PATH_PRETRAIN,
+    SUBMISSION_FOLDER,
+    language_modeling_args,
+    args,
+    SEED, 
+    RESULT_FILE,
+    MODEL_TYPE
+)
+from korean_hate_speech_evaluation import (
+    macro_f1, weighted_f1, decode, encode, print_information
+)
+
+from transformers import XLMRobertaTokenizer
 
 if not os.path.exists(PATH_RESULT): os.makedirs(PATH_RESULT)
 if not os.path.exists(os.path.join(PATH_RESULT, SUBMISSION_FOLDER)): os.makedirs(
     os.path.join(PATH_RESULT, SUBMISSION_FOLDER))
-
-MODEL_TYPE = "xlmroberta"
-PATH_DATA = './resource/data/korean'
-PATH_PRETRAIN = './resoruce/data/pretrain'
-PATH_RESULT = './result'
 
 class KODEMODEL:
 
@@ -47,7 +52,8 @@ class KODEMODEL:
     ]
 
     pretrain_method_class = [
-        'eng', 'sandwitch'
+        'eng',
+        'sandwich'
     ]
 
     def __init__(
@@ -59,11 +65,18 @@ class KODEMODEL:
     ):
         self.model_name = self.model_size_class[model_size];
         self.pretrain_method = pretrain_method;
-        if self.pretrain_method not in self.pretrain_method_class:
+        self.tokenizer = tokenizer
+        if self.pretrain_method and self.pretrain_method not in self.pretrain_method_class:
             print("INVALID Pretrain method")
             self.pretrain_method = None
+        elif self.pretrain_method:
+            self.pretrain_path = os.path.join(PATH_PRETRAIN, pretrain_method)
+        else:
+            self.pretrain_path = os.path.join(PATH_PRETRAIN, 'no_pretrain')
+
+        if positional_encoding == 'relative':
+            args['config'] = {"position_embedding_type": "relative_key"}
         
-        # TODO: Relative Encoding 넣어야 함.
 
     def train(self):
         # Preprocessing
@@ -104,9 +117,9 @@ class KODEMODEL:
                 for item in lm_test:
                     f.write("%s\n" % item)
 
-            model = LanguageModelingModel(MODEL_TYPE, MODEL_NAME, args=language_modeling_args)
+            model = LanguageModelingModel(MODEL_TYPE, self.model_name, args=language_modeling_args)
             model.train_model(os.path.join(PATH_RESULT, "lm_train.txt"), eval_file=os.path.join(PATH_RESULT, "lm_test.txt"))
-            MODEL_NAME = language_modeling_args["best_model_dir"]
+            self.model_name = language_modeling_args["best_model_dir"]
 
         print("Start Training...")
 
@@ -116,28 +129,41 @@ class KODEMODEL:
         test_preds = np.zeros((len(test), args["n_fold"]))
 
         # ENGLISH PRETRAIN
-        if self.pretrain_method and not os.path.exists(PATH_PRETRAIN + '/eng_pretrained'):
-            if os.path.exists(args['output_dir']) and os.path.isdir(args['output_dir']):
-                shutil.rmtree(args['output_dir'])
+        if self.pretrain_method and not os.path.exists(self.pretrain_path):
+            # if os.path.exists(args['output_dir']) and os.path.isdir(args['output_dir']):
+            #     shutil.rmtree(args['output_dir'])
             print("Start ENGLISH PRETRAIN...")
 
+            args['output_dir'] = os.path.join(PATH_PRETRAIN, "eng")
             model = ClassificationModel(MODEL_TYPE, self.model_name, num_labels=3, args=args,
-                                        use_cuda=torch.cuda.is_available()) 
+                                        use_cuda=torch.cuda.is_available())
+            if self.tokenizer:
+                model.tokenizer = XLMRobertaTokenizer.from_pretrained("/root/team26/DeepOffense/examples/korean/my_xlmr", do_lower_case=self.args.do_lower_case, **kwargs)
             train_df, eval_df = train_test_split(train2, test_size=0.1, random_state=SEED * 42)
             model.train_model(train_df, eval_df=eval_df, macro_f1=macro_f1, weighted_f1=weighted_f1, accuracy=sklearn.metrics.accuracy_score)
-            model = ClassificationModel(MODEL_TYPE, args["best_model_dir"], num_labels=3, args=args,
-                                        use_cuda=torch.cuda.is_available())
-            MODEL_NAME = PATH_PRETRAIN + '/eng_pretrained'
-            os.rename(args['output_dir'], MODEL_NAME)
-        else:
-            MODEL_NAME = PATH_PRETRAIN + '/eng_pretrained'
+            # model = ClassificationModel(MODEL_TYPE, args["best_model_dir"], num_labels=3, args=args,
+            #                             use_cuda=torch.cuda.is_available())
+            self.model_name = os.path.join(PATH_PRETRAIN, "eng")
+            # os.rename(args['output_dir'], MODEL_NAME)
+            
+            if self.pretrain_method == 'sandwich':
+                print("Start Sandwich PRETRAIN...")
+
+                args['output_dir'] = self.pretrain_path
+                model = ClassificationModel(self.model_name, MODEL_NAME, num_labels=3, args=args,use_cuda=torch.cuda.is_available()) 
+                train_df, eval_df = train_test_split(train2, test_size=0.1, random_state=SEED * 42)
+                model.train_model(train_df, eval_df=eval_df, macro_f1=macro_f1, weighted_f1=weighted_f1, accuracy=sklearn.metrics.accuracy_score)
+        elif self.pretrain_method:
+            self.model_name = self.pretrain_path
+
+        args['output_dir'] = PATH_RESULT
 
         if args["evaluate_during_training"]:
             for i in range(args["n_fold"]):
                 if os.path.exists(args['output_dir']) and os.path.isdir(args['output_dir']):
                     shutil.rmtree(args['output_dir'])
                 print("Started Fold {}".format(i))
-                model = ClassificationModel(MODEL_TYPE, MODEL_NAME, num_labels=3, args=args,
+                model = ClassificationModel(MODEL_TYPE, self.model_name, num_labels=3, args=args,
                                             use_cuda=torch.cuda.is_available()) 
                 train_df, eval_df = train_test_split(train, test_size=0.1, random_state=SEED * i)
                 model.train_model(train_df, eval_df=eval_df, macro_f1=macro_f1, weighted_f1=weighted_f1, accuracy=sklearn.metrics.accuracy_score)
@@ -155,7 +181,7 @@ class KODEMODEL:
                 final_predictions.append(int(max(set(row), key=row.count)))
             test['predictions'] = final_predictions
         else:
-            model = ClassificationModel(MODEL_TYPE, MODEL_NAME, num_labels=3, args=args,
+            model = ClassificationModel(MODEL_TYPE, self.model_name, num_labels=3, args=args,
                                             use_cuda=torch.cuda.is_available())
             model.train_model(train, macro_f1=macro_f1, weighted_f1=weighted_f1, accuracy=sklearn.metrics.accuracy_score)
             model = ClassificationModel(MODEL_TYPE, args["best_model_dir"], num_labels=3, args=args,

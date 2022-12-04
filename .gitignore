@@ -1,4 +1,10 @@
 *.zip
+.DS_Store
 
 # directory
 resource/pretrained/
+temp/
+runs/
+result/
+.venv/
+__pycache__/
