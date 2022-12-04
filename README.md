@@ -3,7 +3,6 @@
 ## Table of Contents
 
 - [Korean Hate Speech Detection](#korean-hate-speech-detection)
-  - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Motivation](#motivation)
   - [Relative Works](#relative-works)
