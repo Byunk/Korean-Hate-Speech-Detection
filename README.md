@@ -4,6 +4,8 @@
 
 Offensive language causes a great deal of conflict between people of different political ideologies, genders, races, and generations. Recent research focuses heavily on offensive datasets in English, as there are numerous offensive datasets in English available on the Internet.
 
+Numerous studies attempt to solve this issue by training the model using both English and the target language. This is referred to as the cross-lingual language model, or XLM for short. The advantage of XLM is that we can discover the model's latent space using a large number of English datasets.
+
 ## Relative Works
 
 The evident challenge of studies on this topic is how to deal with different languages. Cross-lingual embedded models, XLM-R [Conneau et al., 2019](#references), are suggested to take advantage of profoundness of English sources [Ranasinghe and Zampieri, 2020](#references). It explain XLM-R are exploited to deal with non-English languages without performance degradation. For Korean, there is single active Kaggle competition with Korean Hate Speech Dataset [Jihyung Moon et al., 2020](#references)
@@ -27,10 +29,10 @@ The evident challenge of studies on this topic is how to deal with different lan
 ### **Overview**
 
 |        Model         |            Evaluation Result             |
-| :------------------: | :--------------------------------------: | --- |
+| :------------------: | :--------------------------------------: |
 | Kaggle Leading Group |                  0.677                   |
 |  Multi-lingual BERT  |                  0.548                   |
-|        KoBERT        |                  0.604                   |     |
+|        KoBERT        |                  0.604                   |
 |      **XLM-R**       | **<span style="color:red">0.690</span>** |
 
 <br />
@@ -54,6 +56,14 @@ XLM-R with cross-lingual transfer learning outperforms the other existing models
 To apply Korean tokenizer is the biggest challenge in this work. A linguistic awareness of given language makes a huge impact on performance specifically in Korean [Park et al., 2020](#references). In future work, it would be the first objective to fit existing Korean tokenizer such as Khaiii, Mecab into XLM-R model.
 
 ## Future Works
+
+-   According to [Ranasinghe and Zampieri, 2020](#references), the results for other languages showed better results than Korean. Therefore, it seems that if training is performed by utilizing the Korean specific characteristics tailored to the Korean language, it will be able to show better results.
+
+-   If the model is pre-trained with Japanese dataset, which is closer to the Korean, you will get better results. Similarly, better results could be achieved if it is pre-trained with another language which has more abundant data.
+
+-   If the XLM-R-XL model produces better results, it may be right to assume that modeling a data-poor language using data-rich language datasets helps improve performance.
+
+-   Data augmentation has been conducted by editing existing data text, but it seems that better results can be obtained by performing data augmentation using a large language model such as GPT.
 
 ## References
 
