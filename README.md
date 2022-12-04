@@ -8,6 +8,8 @@ Numerous studies attempt to solve this issue by training the model using both En
 
 ## Relative Works
 
+BERT [Jacob Devlin et al., 2019](#references) and its derivatives has shown novel improvements in most NLP tasks in recent. In hate speech, there are automatic hate speech detection approaches and BERT achieve 7-8% improvement compared to previous system [MacAvaney S et al., 2020](#references). Kaggle competitions are actively held by big tech business such as Google and Meta and the leading model achieve about 80% accuracy in average. Recently, RoBERTa [Yinhan Liu et al., 2019](#references) is frequently used and show high performance.
+
 The evident challenge of studies on this topic is how to deal with different languages. Cross-lingual embedded models, XLM-R [Conneau et al., 2019](#references), are suggested to take advantage of profoundness of English sources [Ranasinghe and Zampieri, 2020](#references). It explain XLM-R are exploited to deal with non-English languages without performance degradation. For Korean, there is single active Kaggle competition with Korean Hate Speech Dataset [Jihyung Moon et al., 2020](#references)
 
 ## Methods & Experiment
