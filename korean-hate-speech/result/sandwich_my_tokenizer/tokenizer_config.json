@@ -1,0 +1,21 @@
+{
+  "bos_token": "<s>",
+  "cls_token": "<s>",
+  "do_lower_case": false,
+  "eos_token": "</s>",
+  "mask_token": {
+    "__type": "AddedToken",
+    "content": "<mask>",
+    "lstrip": true,
+    "normalized": true,
+    "rstrip": false,
+    "single_word": false
+  },
+  "name_or_path": "/root/team26/DeepOffense/examples/korean/my_xlmr",
+  "pad_token": "<pad>",
+  "sep_token": "</s>",
+  "sp_model_kwargs": {},
+  "special_tokens_map_file": "special_tokens_map.json",
+  "tokenizer_class": "XLMRobertaTokenizer",
+  "unk_token": "<unk>"
+}
