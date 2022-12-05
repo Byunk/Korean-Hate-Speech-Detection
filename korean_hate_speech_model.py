@@ -195,4 +195,4 @@ class KODEMODEL:
         time.sleep(5)
 
         test.to_csv(os.path.join(PATH_RESULT, RESULT_FILE),  header=True, sep='\t', index=False, encoding='utf-8')
-        print_information(test, "predictions", "labels")
+        # print_information(test, "predictions", "labels")
