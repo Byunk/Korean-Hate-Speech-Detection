@@ -2,17 +2,20 @@
 
 ## Table of Contents
 
-- [Korean Hate Speech Detection](#korean-hate-speech-detection)
-  - [Installation](#installation)
-  - [Motivation](#motivation)
-  - [Relative Works](#relative-works)
-  - [Methods \& Experiment](#methods--experiment)
-  - [Result](#result)
-    - [**Overview**](#overview)
-    - [**Hyperparameter Tuning**](#hyperparameter-tuning)
-  - [Conclusion](#conclusion)
-  - [Future Works](#future-works)
-  - [References](#references)
+-   [Korean Hate Speech Detection](#korean-hate-speech-detection)
+    -   [Table of Contents](#table-of-contents)
+    -   [Installation](#installation)
+    -   [Run](#run)
+    -   [Motivation](#motivation)
+    -   [Relative Works](#relative-works)
+    -   [Methods \& Experiment](#methods--experiment)
+    -   [Result](#result)
+        -   [**Overview**](#overview)
+        -   [**Hyperparameter Tuning**](#hyperparameter-tuning)
+    -   [Conclusion](#conclusion)
+    -   [Future Works](#future-works)
+    -   [References](#references)
+    -   [Contributions](#contributions)
 
 ## Installation
 
@@ -31,6 +34,35 @@ Alternatively, you can manually cloning the DeepOffense repository.
 # Optional
 git clone https://github.com/TharinduDR/DeepOffense.git
 ```
+
+## Run
+
+> The easiest way to start
+
+```
+python main.py
+```
+
+Alternatively, you can import KODEMODEL from korean_hate_speech_model.py
+
+```
+class KODEMODEL(
+        model_size = 'large',
+        positional_encoding = 'absolute',
+        tokenizer = None,
+        pretrain_method = None
+):
+```
+
+> Parameters
+
+> > model_size : 'large' or 'base'
+
+> > positional_encoding : 'absolute' or 'relative'
+
+> > tokenizer : 'pretrained' or None
+
+> > pretrain_method : 'eng' or 'sandwich' or None
 
 ## Motivation
 
@@ -114,3 +146,15 @@ To apply Korean tokenizer is the biggest challenge in this work. A linguistic aw
 [6] Matthew S. Dryer and Martin Haspelmath (2013). WALS Online. Max Planck Institute for Evolutionary
 
 [7] Park, Kyubyong and Lee, Joohong and Jang, Seongbo and Jung, Dawoon. 2020. An Empirical Study of Tokenization Strategies for Various Korean NLP Tasks. ArXiv: Computation and Language.
+
+## Contributions
+
+[Minsun Kim](https://github.com/min-sunnying)
+
+[Jaemin Jun](https://github.com/jjmcoconut)
+
+[Jeongjun Lee](https://github.com/boingkiri)
+
+[Kyungho Byoun](https://github.com/Byunk) : [clearman001@kaist.ac.kr](clearman001@kaist.ac.kr)
+
+[Taegyeom Kim](https://github.com/jas03006)

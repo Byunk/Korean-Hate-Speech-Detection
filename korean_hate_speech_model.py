@@ -44,11 +44,11 @@ class KODEMODEL:
     }
 
     encoding_class = [
-        'aboslute', 'relative'
+        'absolute', 'relative'
     ]
 
     tokenizer_class = [
-        'khaiii'
+        'pretrained'
     ]
 
     pretrain_method_class = [
