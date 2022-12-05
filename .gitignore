@@ -3,6 +3,7 @@
 
 # directory
 resource/pretrained/
+DeepOffense/
 temp/
 runs/
 result/
