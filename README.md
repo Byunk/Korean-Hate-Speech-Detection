@@ -133,7 +133,7 @@ To apply Korean tokenizer is the biggest challenge in this work. A linguistic aw
 
 ## References
 
-[1] Tharindu Ranasinghe and Marcos Zampieri. 2020. Multilingual Offensive Language Identification with Cross-lingual Embeddings. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 5838–5844.
+[1] Tharindu Ranasinghe and Marcos Zampieri. 2020. Multilingual Offensive Language Identification with Cross-lingual Embeddings. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 5838–5844. [Github Repository](https://github.com/TharinduDR/DeepOffense)
 
 [2] Jihyung Moon, Won Ik Cho, Junbum Lee. 2020. BEEP! Korean Corpus of Online News Comments for Toxic Speech Detection
 
