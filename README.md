@@ -70,6 +70,8 @@ Offensive language causes a great deal of conflict between people of different p
 
 Numerous studies attempt to solve this issue by training the model using both English and the target language. This is referred to as the cross-lingual language model, or XLM for short. The advantage of XLM is that we can discover the model's latent space using a large number of English datasets.
 
+We use [Korean Hate Speech Dataset](https://github.com/kocohub/korean-hate-speech) for training and evaluation, and we set [Kaggle Competition](https://www.kaggle.com/competitions/korean-hate-speech-detection/overview) as a benchmark.
+
 ## Relative Works
 
 BERT [Jacob Devlin et al., 2019](#references) and its derivatives has shown novel improvements in most NLP tasks in recent. In hate speech, there are automatic hate speech detection approaches and BERT achieve 7-8% improvement compared to previous system [MacAvaney S et al., 2020](#references). Kaggle competitions are actively held by big tech business such as Google and Meta and the leading model achieve about 80% accuracy in average. Recently, RoBERTa [Yinhan Liu et al., 2019](#references) is frequently used and show high performance.
