@@ -64,6 +64,15 @@ class KODEMODEL(
 
 > > pretrain_method : 'eng' or 'sandwich' or None
 
+Then you can train the model with Model.train() method.
+
+```
+model = KODEMODEL()
+model.train()
+```
+
+After train process, it shows the training result automatically, and save the trained model into the result directory.
+
 ## Motivation
 
 Offensive language causes a great deal of conflict between people of different political ideologies, genders, races, and generations. Recent research focuses heavily on offensive datasets in English, as there are numerous offensive datasets in English available on the Internet.
